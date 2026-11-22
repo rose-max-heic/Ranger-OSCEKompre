@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>OSCE Komprehensif Pra-Koas</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<script>(function(){var t='light';try{t=localStorage.getItem('osce-theme')||'light'}catch(e){}document.documentElement.setAttribute('data-theme',t)})();</script>
+<style>
+/* Warna: edit di :root (terang) dan html[data-theme="dark"] (gelap).
+   --brand = hijau utama, --soft = hijau sangat muda, --bg = latar, --wine = aksen penting */
+
+:root{
+  --bg:#F5F6EF; --card:#FFFFFF; --ink:#1F2A24; --mute:#66736B; --line:#E1E5D8;
+  --brand:#3E6B52; --brand-ink:#2F5A43; --soft:#E6F0E6; --soft-2:#D3E5D5;
+  --wine:#7B2C3B; --yel:#FFF4CC; --shadow:0 8px 26px rgba(47,90,67,.09); --r:16px;
+}
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#131915; --card:#1B2420; --ink:#E8EFE9; --mute:#9DB0A4; --line:rgba(232,239,233,.12);
+  --brand:#4C8363; --brand-ink:#9ED1B2; --soft:rgba(158,209,178,.11); --soft-2:rgba(158,209,178,.20);
+  --wine:#E58C9B; --yel:#3A3318; --shadow:0 8px 26px rgba(0,0,0,.35);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;transition:background .25s,color .25s}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* nav */
+.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:18px;height:56px}
+.brand{font-weight:800;font-size:.95rem;letter-spacing:-.01em;white-space:nowrap}
+.brand span{color:var(--brand-ink)}
+.nav{display:flex;gap:4px;flex:1;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{font-size:.8rem;font-weight:600;color:var(--mute);padding:7px 13px;border-radius:30px;white-space:nowrap;transition:background .15s,color .15s}
+.nav a:hover{background:var(--soft);color:var(--brand-ink)}
+.tg{border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 .75rem inherit;font-family:inherit;padding:7px 13px;border-radius:30px;cursor:pointer;white-space:nowrap}
+.tg:hover{background:var(--soft)}
+
+/* hero */
+.hero{padding:52px 0 30px}
+.eyebrow{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-ink);background:var(--soft);padding:5px 13px;border-radius:30px;margin-bottom:16px}
+h1{font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:10px}
+h1 em{font-style:normal;color:var(--brand-ink)}
+.lead{color:var(--mute);font-size:1rem;max-width:560px}
+
+/* countdown */
+.cd{margin-top:26px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow);display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.cd-label{flex:1;min-width:190px}
+.cd-label b{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
+.cd-label span{font-weight:700;font-size:.95rem}
+.cd-boxes{display:flex;gap:10px}
+.cd-box{background:var(--soft);border-radius:12px;min-width:68px;padding:10px 8px;text-align:center}
+.cd-box strong{display:block;font-size:1.65rem;font-weight:800;color:var(--brand-ink);line-height:1.1;font-variant-numeric:tabular-nums}
+.cd-box small{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.cd-msg{font-weight:700;color:var(--wine)}
+
+/* sections */
+section{padding:30px 0 6px;scroll-margin-top:70px}
+.sh{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.sh h2{font-size:1.25rem;font-weight:800;letter-spacing:-.02em}
+.sh .ct{font-size:.72rem;font-weight:700;color:var(--brand-ink);background:var(--soft);padding:3px 11px;border-radius:30px}
+.sh p{flex-basis:100%;font-size:.85rem;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+
+/* ppt */
+.start{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.ppt{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:var(--r);padding:18px 22px;box-shadow:var(--shadow);flex-wrap:wrap}
+.ppt .ic{font-size:1.7rem}
+.ppt .tx{flex:1;min-width:150px}
+.ppt h3{font-size:1rem;font-weight:700}
+.ppt p{font-size:.82rem;color:var(--mute)}
+
+/* system card */
+.sys{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:16px;transition:transform .18s,box-shadow .18s,border-color .18s}
+.sys:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--soft-2)}
+.sys-head{display:flex;align-items:center;gap:12px}
+.no{font-size:.7rem;font-weight:800;color:var(--brand-ink);background:var(--soft);border-radius:8px;padding:4px 8px}
+.sys .ic{font-size:1.4rem;line-height:1}
+.sys h3{font-size:.95rem;font-weight:700;line-height:1.3;flex:1}
+.sys-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:.78rem;font-weight:700;padding:10px 12px;border-radius:11px;border:1.5px solid transparent;transition:background .15s,transform .12s,border-color .15s;text-align:center}
+.btn.primary{background:var(--brand);color:#fff}
+.btn.primary:hover{background:var(--brand-ink);transform:translateY(-1px)}
+html[data-theme="dark"] .btn.primary:hover{background:#5B9475}
+.btn.ghost{background:transparent;color:var(--brand-ink);border-color:var(--soft-2)}
+.btn.ghost:hover{background:var(--soft)}
+.btn.soon{opacity:.45;cursor:default;position:relative}
+.btn.soon:hover{transform:none;background:inherit}
+.btn.primary.soon:hover{background:var(--brand)}
+.btn.ghost.soon:hover{background:transparent}
+
+footer{margin-top:54px;border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;font-size:.78rem;color:var(--mute)}
+footer b{color:var(--brand-ink)}
+
+@media(max-width:720px){
+  .wrap{padding:0 16px}
+  .grid,.start{grid-template-columns:1fr}
+  .hero{padding-top:34px}
+  .brand{display:none}
+  .cd{padding:16px}
+  .cd-box{min-width:0;flex:1}
+  .cd-boxes{width:100%}
+}
+
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand">🩺 OSCE <span>Kompre</span></div>
+  <nav class="nav">
+    <a href="#pengantar">Pengantar</a>
+    <a href="#mayor">Sistem Mayor</a>
+    <a href="#minor">Sistem Minor</a>
+  </nav>
+  <button class="tg" id="tg" onclick="toggleTheme()">🌙 Gelap</button>
+</div></header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <span class="eyebrow">Pra-Koas</span>
+    <h1>OSCE <em>Komprehensif</em></h1>
+    <p class="lead">Materi, ceklis, dan modul semua sistem dalam satu tempat. Pilih sistem, lalu buka materinya.</p>
+
+    <div class="cd">
+      <div class="cd-label"><b>Hitung mundur</b><span id="cdMsg"></span></div>
+      <div class="cd-boxes" id="cdBoxes">
+        <div class="cd-box"><strong id="d">0</strong><small>Hari</small></div>
+        <div class="cd-box"><strong id="h">00</strong><small>Jam</small></div>
+        <div class="cd-box"><strong id="m">00</strong><small>Menit</small></div>
+        <div class="cd-box"><strong id="s">00</strong><small>Detik</small></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="pengantar">
+    <div class="sh"><h2>Mulai dari sini</h2></div>
+    <div class="start">
+      <div class="ppt">
+        <div class="ic">📑</div>
+        <div class="tx">
+          <h3>PPT Pengantar Sosialisasi</h3>
+          <p>Gambaran OSCE komprehensif pra-koas, kategori sistem, dan aturan main.</p>
+        </div>
+        <a class="btn primary" href="https://docs.google.com/presentation/d/10_RDGrtC3WSkkJlrqDdwMhyhz5KnDyft/edit?usp=share_link&amp;ouid=108105653672754634167&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener">Buka PPT</a>
+      </div>
+      <div class="ppt">
+        <div class="ic">📋</div>
+        <div class="tx">
+          <h3>Cheat Sheet Dasar OSCE</h3>
+          <p>Ringkasan dasar yang dipakai di semua sistem (PDF).</p>
+        </div>
+        <a class="btn primary" href="https://drive.google.com/file/d/1tZd7-jHIjBZzfJBgPn82JhFXQ9kSHZE1/view?usp=share_link" target="_blank" rel="noopener">Buka PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="mayor">
+    <div class="sh"><h2>Sistem Mayor</h2><span class="ct">8 sistem</span><p>Sistem besar. Tiap sistem punya materi + ceklis (HTML) dan modul PDF.</p></div>
+    <div class="grid">
+      <article class="sys">
+        <div class="sys-head"><span class="no">01</span><span class="ic">🫁</span><h3>Sistem Respirasi</h3></div>
+        <div class="sys-actions">
+          <a class="btn primary" href="OSCE-Kompre-Respirasi.html">📖 Materi &amp; Ceklis</a>
+          <a class="btn ghost" href="https://drive.google.com/file/d/1coS3CrwQ9vORM6AafI_0FYC1pZaceICy/view?usp=share_link" target="_blank" rel="noopener">📄 Modul PDF</a>
+        </div>
+      </article>
+      <article class="sys">
+        <div class="sys-head"><span class="no">02</span><span class="ic">❤️</span><h3>Sistem Kardiovaskular</h3></div>
+        <div class="sys-actions">
+          <a class="btn primary" href="OSCE-Kompre-Kardiovaskular.html">📖 Materi &amp; Ceklis</a>
+          <a class="btn ghost" href="https://drive.google.com/file/d/18fawVo4ClBtCBoVBeVZyrznBEDxjr0NN/view?usp=share_link" target="_blank" rel="noopener">📄 Modul PDF</a>
+        </div>
+      </article>
+      <article class="sys">
+        <div class="sys-head"><span class="no">03</span><span class="ic">🍽️</span><h3>Sistem Gastrointestinal, Hepatobilier, dan Pankreas</h3></div>
+        <div class="sys-actions">
+          <a class="btn primary" href="OSCE-Kompre-Gastrointestinal.html">📖 Materi &amp; Ceklis</a>
+          <a class="btn ghost" href="https://drive.google.com/file/d/1A3gQbA0EDggdbnh2Nxp3YnTBB-trjk8b/view?usp=sharing" target="_blank" rel="noopener">📄 Modul PDF</a>
+        </div>
+      </article>
+      <article class="sys">
+        <div class="sys-head"><span class="no">04</span><span class="ic">💧</span><h3>Sistem Ginjal dan Saluran Kemih</h3></div>
+        <div class="sys-actions">
+          <a class="btn primary" href="OSCE-Kompre-Ginjal-Saluran-Kemih.html">📖 Materi &amp; Ceklis</a>
+          <a class="btn ghost" href="https://drive.google.com/file/d/1JlnEtkLPyir_VrnJqn77PxNkfoVu6JSR/view?usp=share_link" target="_blank" rel="noopener">📄 Modul PDF</a>
+        </div>
+      </article>
+      <article class="sys">
+        <div class="sys-head"><span class="no">05</span><span class="ic">🍬</span><h3>Sistem Endokrin, Metabolisme, dan Nutrisi</h3></div>
+        <div class="sys-actions">
+          <a class="btn primary" href="OSCE-Kompre-Endokrin-Metabolik-Nutrisi.html">📖 Materi &amp; Ceklis</a>
+          <a class="btn ghost" href="https://drive.google.com/file/d/1bwIMJepwj0kTFjzADGbk11LL89kHkpWD/view?usp=share_link" target="_blank" rel="noopener">📄 Modul PDF</a>
+        </div>
+      </article>
+      <article class="sys">
+        <div class="sys-head"><span class="no">06</span><span class="ic">🩸</span><h3>Sistem Hematologi dan Imunologi</h3></div>
+        <div class="sys-actions">
+          <a class="btn primary" href="OSCE-Kompre-Hematologi-Imunologi-Infeksi.html">📖 Materi &amp; Ceklis</a>
+          <a class="btn ghost" href="https://drive.google.com/file/d/1YuFfHNdkwjwyaAY-wUcQzhLh50cmV4mw/view?usp=share_link" target="_blank" rel="noopener">📄 Modul PDF</a>
+        </div>
+      </article>
+      <article class="sys">
+        <div class="sys-head"><span class="no">07</span><span class="ic">🦴</span><h3>Sistem Muskuloskeletal</h3></div>
+        <div class="sys-actions">
+          <a class="btn primary" href="OSCE-Kompre-Muskuloskeletal.html">📖 Materi &amp; Ceklis</a>
+          <a class="btn ghost" href="https://drive.google.com/file/d/13NQIF1WJ9fY6cpFlEFzeu3HIV5yJJR0V/view?usp=share_link" target="_blank" rel="noopener">📄 Modul PDF</a>
+        </div>
+      </article>
+      <article class="sys">
+        <div class="sys-head"><span class="no">08</span><span class="ic">🌸</span><h3>Sistem Reproduksi</h3></div>
+        <div class="sys-actions">
+          <a class="btn primary" href="OSCE-Kompre-Reproduksi-ObGyn.html">📖 Materi &amp; Ceklis</a>
+          <a class="btn ghost" href="https://drive.google.com/file/d/1KCj2qcoAMoxlxpvU3Hkplix3wD7x4InX/view?usp=share_link" target="_blank" rel="noopener">📄 Modul PDF</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="minor">
+    <div class="sh"><h2>Sistem Minor</h2><span class="ct">4 sistem</span><p>Sistem kecil.</p></div>
+    <div class="grid">
+      <article class="sys">
+        <div class="sys-head"><span class="no">01</span><span class="ic">🧠</span><h3>Sistem Saraf</h3></div>
+        <div class="sys-actions">
+          <a class="btn primary" href="OSCE-Kompre-Neurologi.html">📖 Materi &amp; Ceklis</a>
+          <a class="btn ghost" href="https://drive.google.com/file/d/1rCKY5oU5BzWdbrXROjz7-AWyh_J6HdDo/view?usp=share_link" target="_blank" rel="noopener">📄 Modul PDF</a>
+        </div>
+      </article>
+      <article class="sys">
+        <div class="sys-head"><span class="no">02</span><span class="ic">💭</span><h3>Psikiatri</h3></div>
+        <div class="sys-actions">
+          <a class="btn primary" href="OSCE-Kompre-Psikiatri.html">📖 Materi &amp; Ceklis</a>
+          <a class="btn ghost" href="https://drive.google.com/file/d/1_f7QFOB8zO5QLgtojSMuQCKkpw7vRaz9/view?usp=share_link" target="_blank" rel="noopener">📄 Modul PDF</a>
+        </div>
+      </article>
+      <article class="sys">
+        <div class="sys-head"><span class="no">03</span><span class="ic">👁️</span><h3>Sistem Indra (Mata/THT)</h3></div>
+        <div class="sys-actions">
+          <a class="btn primary" href="OSCE-Kompre-Mata-THT.html">📖 Materi &amp; Ceklis</a>
+          <a class="btn ghost" href="https://drive.google.com/file/d/18ppTTX70KnnBPW3bQw3zoCvkMF_py8Iq/view?usp=share_link" target="_blank" rel="noopener">📄 Modul PDF</a>
+        </div>
+      </article>
+      <article class="sys">
+        <div class="sys-head"><span class="no">04</span><span class="ic">🧴</span><h3>Sistem Integumentum</h3></div>
+        <div class="sys-actions">
+          <a class="btn primary" href="OSCE-Kompre-Kulit-Kelamin.html">📖 Materi &amp; Ceklis</a>
+          <a class="btn ghost" href="https://drive.google.com/file/d/1lMCJtrKZgcFow8iCp-0AaIs6pMUwb7mO/view?usp=share_link" target="_blank" rel="noopener">📄 Modul PDF</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer><div class="wrap">Ranger HQ &nbsp;·&nbsp; <b>OSCE Komprehensif Pra-Koas</b><br/>Disusun dari checklist dan materi pribadi untuk belajar. Cek ulang dengan penguji dan panduan resmi.</div></footer>
+
+<script>
+/* ───────── ATUR TANGGAL UJIAN DI SINI ─────────
+   Format: 'TAHUN-BULAN-TANGGALTJAM:MENIT:DETIK+07:00' (WIB)
+   Contoh: '2026-11-28T07:30:00+07:00'. Kosongkan ('') kalau belum ada. */
+const EXAM_DATE = '2026-11-28T00:00:00+07:00';
+const EXAM_TIME_KNOWN = false;   // ganti true setelah jam ujian diisi di EXAM_DATE
+const EXAM_LABEL = 'OSCE Komprehensif Pra-Koas';
+
+function pad(n){return String(n).padStart(2,'0')}
+const $ = id => document.getElementById(id);
+function tick(){
+  const msg=$('cdMsg'), boxes=$('cdBoxes');
+  if(!EXAM_DATE){ boxes.style.display='none'; msg.textContent='Tanggal ujian belum diatur'; return; }
+  const diff=new Date(EXAM_DATE).getTime()-Date.now();
+  if(isNaN(diff)){ boxes.style.display='none'; msg.textContent='Format tanggal belum benar'; return; }
+  if(diff<=0){ boxes.style.display='none'; msg.textContent='Ujian sudah dimulai. Semangat, kamu sudah siap! 💪'; return; }
+  boxes.style.display='flex'; msg.textContent=new Date(EXAM_DATE).toLocaleString('id-ID',EXAM_TIME_KNOWN?{dateStyle:'full',timeStyle:'short',timeZone:'Asia/Jakarta'}:{dateStyle:'full',timeZone:'Asia/Jakarta'});
+  const s=Math.floor(diff/1000);
+  $('d').textContent=Math.floor(s/86400); $('h').textContent=pad(Math.floor(s%86400/3600));
+  $('m').textContent=pad(Math.floor(s%3600/60)); $('s').textContent=pad(s%60);
+}
+tick(); setInterval(tick,1000);
+
+/* mode terang / gelap */
+function label(){ $('tg').textContent = document.documentElement.getAttribute('data-theme')==='dark' ? '☀️ Terang' : '🌙 Gelap'; }
+function toggleTheme(){
+  const n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',n);
+  try{localStorage.setItem('osce-theme',n)}catch(e){}
+  label();
+}
+label();
+
+/* tombol yang link-nya belum diisi tidak melompat ke atas halaman */
+document.querySelectorAll('a[href="#"]').forEach(a=>{
+  a.classList.add('soon'); a.title='Link belum diisi';
+  a.addEventListener('click',ev=>ev.preventDefault());
+});
+</script>
+</body>
+</html>
